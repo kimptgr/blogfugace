@@ -1,0 +1,24 @@
+<div class="container">
+
+    <%-include ("partials/header") %>
+
+<h1>Bienvenue sur le blog éphémère 🦋</h1>
+<hr>
+<h2>Tout ce qui est dit ici est écouté puis, quand on ferme la fenêtre, s'envole.</h2>
+<form action="/submit" method="post">
+    <textarea name="billet" class="text"> </textarea>
+    <input type="submit" value="✉️" alt="bouton d'envoi de formulaire">
+</form>
+<section>
+<% if (locals.billets && locals.horodatage) { %>
+    <% for (let i = billets.length-1 ; i >= 0 ; i --) { %>
+        <div>
+            <p class="dateHeure"> <%= horodatage[i] %> </p>
+            <p class="litterature"> <%= billets[i] %> </p>    
+        </div>
+    <% } %>
+    
+<% } else {} %>
+</section>
+<%-include ("partials/footer") %>
+</div>
