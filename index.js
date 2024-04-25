@@ -32,6 +32,3 @@ app.post("/submit", (req, res) => {
     res.render("index.ejs", {billets, horodatage})
 
 })
-
-const port = 3000 ;
-app.listen(port, () => {console.log(`Serveur running on port ${port}`)})
